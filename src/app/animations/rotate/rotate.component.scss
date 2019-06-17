@@ -1,0 +1,61 @@
+.transform-o-rt {
+  transform-origin: right top;
+}
+
+.transform-o-rb {
+  transform-origin: right bottom;
+}
+
+.transform-o-lt {
+  transform-origin: left top;
+}
+
+.transform-o-lb {
+  transform-origin: left bottom;
+}
+
+.transform-o-t {
+  transform-origin: top;
+}
+
+.transform-o-b {
+  transform-origin: bottom;
+}
+
+.transform-o-l {
+  transform-origin: left;
+}
+
+.transform-o-r {
+  transform-origin: right;
+}
+
+
+@mixin dot-style($property-name, $value) {
+  .#{$property-name}-#{$value} {
+    #{$property-name}: $value !important;
+  }
+}
+
+@mixin transform-rotate($deg) {
+  .transform-rotate-x-#{#{$deg}} {
+    transform: rotateX(#{$deg}deg);
+  }
+  .transform-rotate-y-#{#{$deg}} {
+    transform: rotateY(#{$deg}deg);
+  }
+  .transform-rotate-#{$deg} {
+    transform: rotate(#{$deg}deg);
+  }
+}
+
+@for $value from 0 through 360 {
+  @include transform-rotate($value);
+}
+
+/* name and value is sometime can't on the rule */
+/* if for rotate */
+/* basically, unit should be explicitly written */
+/* default value can achive trade off of conciseness and generality */
+/* generality is normaly should be weighed */
+/* rotate3d(x, y, z) => combination pattern is too large to encompass  */

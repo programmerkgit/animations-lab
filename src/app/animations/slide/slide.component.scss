@@ -1,0 +1,80 @@
+$slide-to-right-animation: slide-to-right-animation;
+
+
+@mixin slide-left($left) {
+
+}
+
+@keyframes #{$slide-to-right-animation} {
+  to {
+    transform: translateX(calc(100vw - 100%));
+  }
+}
+
+@keyframes slide-to-left {
+  to {
+    transform: translateX(calc(-100vw + 100%));
+  }
+}
+
+@keyframes slide-to-down {
+  to {
+    transform: translate(calc(100vw - 100%), (calc(100vh - 100%)));
+  }
+}
+
+.anim-slide-to-down {
+  animation-name: slide-to-down;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.slide-to-right {
+  animation-name: $slide-to-right-animation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.5, 1, 0.5, 0.7);
+}
+
+.slide-to-left {
+  animation-name: slide-to-left;
+}
+
+.animation-duration-5s {
+  animation-duration: 5s;
+}
+
+.animation-iteration-count-infinite {
+  animation-iteration-count: infinite;
+}
+
+.animation-iteration-count-infinite {
+  animation-direction: reverse;
+}
+
+.animation-iteration-count-infinite {
+  animation-direction: alternate;
+}
+
+.animation-iteration-count-infinite {
+  animation-direction: alternate-reverse;
+}
+
+.animation-timing-function-ease-in {
+  animation-timing-function: ease-in;
+}
+
+@keyframes slide-to-top {
+  to {
+    transform: translateY(-200px);
+  }
+}
+
+.slide-to-top {
+  animation-direction: alternate;
+  animation-duration: 2s;
+  animation-name: slide-to-top;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
